@@ -4,7 +4,7 @@ def list_causes():
     from models import Cause
     causes = Cause.get_all()
     if causes:
-        print("\n📋 List of Causes:")
+        print("\n List of Causes:")
         for cause in causes:
             progress = cause.progress_percentage
             print(f"[{cause.id}] {cause.name}")
@@ -18,7 +18,7 @@ def list_donors():
     from models import Donor
     donors = Donor.get_all()
     if donors:
-        print("\n👥 List of Donors:")
+        print("\n List of Donors:")
         for donor in donors:
             print(f"[{donor.id}] {donor.name} <{donor.email}> - Total Donated: ksh
             {donor.total_donated:.2f}")
@@ -49,7 +49,7 @@ def create_or_get_donor():
     """Create a new donor or get existing one by email"""
     from models import Donor
     
-    print("\n👤 Donor Information:")
+    print("\n Donor Information:")
     email = input("Enter your email: ").strip()
     
     
@@ -101,7 +101,7 @@ def make_donation():
         
         print(f" Donation of ksh
         {amount:.2f} successfully added from {donor.name} to {cause.name}.")
-        print(f"📊 {cause.name} progress: {cause.progress_percentage:.1f}% of ksh
+        print(f" {cause.name} progress: {cause.progress_percentage:.1f}% of ksh
         {cause.goal:.2f} goal")
         
     except ValueError:
